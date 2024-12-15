@@ -247,7 +247,8 @@ raxml-ng --all --msa alignment.fasta --model model --bs-trees 100 --threads auto
 raxml-ng --rfdist --tree prefix.raxml.mlTrees --prefix RF6_prefix
 # Check convergence of bootstrap trees
 raxml-ng --bsconverge --bs-trees prefix.raxml.bootstraps --prefix prefix --seed 1 --threads auto{8} --bs-cutoff 0.03
-
+# Check the possibility of using the adaptive version, which quantifies the difficulty of the dataset
+raxml-ng-adaptive --adaptive --msa alignment.fasta  --model model --prefix prefix  
 ```
 Above, "prefix" is for instance the name of the gene, and "model" is the desired model of nucleotide substitution (for instance the one selected by IQtree).  
   
